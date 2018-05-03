@@ -1,15 +1,9 @@
-/*
- * OthelloBoard.h
- *
- *  Created on: Apr 18, 2015
- *      Author: wong
- */
-
 #ifndef OTHELLOBOARD_H_
 #define OTHELLOBOARD_H_
 
 #include "Board.h"
-
+const int ROW_LEN = 4;
+const int COL_LEN = 4;
 /**
  * This class is a specialized version of the Board class for Othello. The OthelloBoard
  * class respects the rules of Othello and also keeps track of the symbols for Player
@@ -17,7 +11,8 @@
  */
 class OthelloBoard : public Board {
 public:
-
+	int row;
+	int col;
 	/**
 	 * @cols The number of columns in the game of Othello
 	 * @rows The number of rows in the game of Othello
@@ -103,6 +98,12 @@ public:
      * Returns the symbol for Player 2's pieces
      */
     char get_p2_symbol() { return p2_symbol; }
+		int get_col_pos(){return col;}
+		int get_row_pos(){return row;}
+		void set_row_pos(int x){ row = x;}
+		void set_col_pos(int y){col = y;}
+		int get_col_len(){return COL_LEN;}
+		int get_row_len(){return ROW_LEN;}
 
 private:
 

@@ -1,9 +1,3 @@
-/*
- * MinimaxPlayer.h
- *
- *  Created on: Apr 17, 2015
- *      Author: wong
- */
 
 #ifndef MINIMAXPLAYER_H
 #define MINIMAXPLAYER_H
@@ -11,6 +5,7 @@
 #include "OthelloBoard.h"
 #include "Player.h"
 #include <vector>
+using std::vector;
 
 /**
  * This class represents an AI player that uses the Minimax algorithm to play the game
@@ -35,11 +30,16 @@ public:
 	 * @param row Holds the return value for the row of the move
 	 */
     void get_move(OthelloBoard* b, int& col, int& row);
-
-    /**
-     * @return A copy of the MinimaxPlayer object
-     * This is a virtual copy constructor
-     */
+		void decision(OthelloBoard*, int&, int&);
+		int calc_utility(OthelloBoard* );
+		vector<OthelloBoard* > get_successors(OthelloBoard*, char);
+		int terminal_test(vector <OthelloBoard*>, OthelloBoard *);
+		int calc_max(OthelloBoard *, int &, int &,  char);
+		int calc_min(OthelloBoard *, int &, int &, char);
+		/**
+	 * @return A copy of the MinimaxPlayer object
+	 * This is a virtual copy constructor
+	 */
     MinimaxPlayer* clone();
 
 private:

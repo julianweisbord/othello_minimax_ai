@@ -1,9 +1,3 @@
-/*
- * OthelloBoard.cpp
- *
- *  Created on: Apr 18, 2015
- *      Author: wong
- */
 #include <assert.h>
 #include "OthelloBoard.h"
 

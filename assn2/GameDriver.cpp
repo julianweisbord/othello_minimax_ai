@@ -10,6 +10,7 @@ GameDriver::GameDriver(char* p1type, char* p2type, int num_rows, int num_cols) {
 		p1 = new MinimaxPlayer('X');
 	} else {
 		std::cout << "Invalid type of player for player 1" << std::endl;
+		exit(-1);
 	}
 
 	if( strcmp(p2type,"human") == 0 ) {
@@ -18,6 +19,8 @@ GameDriver::GameDriver(char* p1type, char* p2type, int num_rows, int num_cols) {
 		p2 = new MinimaxPlayer('O');
 	} else {
 		std::cout << "Invalid type of player for player 2" << std::endl;
+		exit(-1);
+
 	}
 
 	board = new OthelloBoard(num_rows, num_cols,p1->get_symbol(), p2->get_symbol());
@@ -97,7 +100,7 @@ void GameDriver::run() {
 	} else {
 	    std::cout << "Can't move\n";
 	    if( cant_move_counter == 1 ) {
-		// Both players can't move, game over                       
+		// Both players can't move, game over
 		break;
 	    } else {
 		cant_move_counter++;
